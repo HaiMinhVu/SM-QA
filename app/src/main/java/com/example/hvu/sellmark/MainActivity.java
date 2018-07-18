@@ -1,5 +1,6 @@
 package com.example.hvu.sellmark;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -55,10 +56,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         if (response.trim().equals(edtusername.getText().toString())){
-                            Toast.makeText(MainActivity.this, "good", Toast.LENGTH_SHORT).show();
+                            Intent gotoindex = new Intent(MainActivity.this, index_page.class);
+                            startActivity(gotoindex);
                         }
                         else {
-                            Toast.makeText(MainActivity.this, "bad", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Wrong Username/Password", Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
