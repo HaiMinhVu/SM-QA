@@ -57,6 +57,9 @@ public class Sample_Record_Class_Adapter extends BaseAdapter {
         TextView tvvendor = (TextView) view.findViewById(R.id.tvvendor);
         tvvendor.setText(sr.getEname());
 
+        TextView tvsrid = (TextView) view.findViewById(R.id.tvsamplerecordID);
+        tvsrid.setText(sr.getSrid());
+
         return view;
     }
 }

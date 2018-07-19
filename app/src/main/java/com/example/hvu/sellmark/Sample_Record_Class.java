@@ -17,10 +17,6 @@ public class Sample_Record_Class {
         this.type = type;
     }
 
-    public  Sample_Record_Class(String ename){
-        this.ename = ename;
-    }
-
     public String getSrid() {
         return srid;
     }
