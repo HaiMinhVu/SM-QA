@@ -1,11 +1,19 @@
 package com.example.hvu.sellmark;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Sample_Class_Adapter extends ArrayAdapter {
 
@@ -20,5 +28,27 @@ public class Sample_Class_Adapter extends ArrayAdapter {
         this.resource = resource;
     }
 
-    
+    @NonNull
+    @Override
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        if (convertView == null){
+            LayoutInflater layoutInflater = (LayoutInflater) getContext()
+                    .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+            convertView = layoutInflater.inflate(R.layout.activity_sample_item_view, null, true);
+
+        }
+
+        Sample_Class s = (Sample_Class) getItem(position);
+
+        ImageView imsample = (ImageView) convertView.findViewById(R.id.imsample);
+        Picasso.get().load(s.getSimage()).into(imsample);
+
+        TextView tvsname = (TextView) convertView.findViewById(R.id.tvsname);
+        tvsname.setText(s.getSname());
+
+        TextView tvsdescription = (TextView) convertView.findViewById(R.id.tvsdescription);
+        tvsdescription.setText(s.getSdescription());
+
+        return convertView;
+    }
 }

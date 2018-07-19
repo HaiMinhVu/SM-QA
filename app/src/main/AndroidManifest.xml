@@ -24,7 +24,8 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".index_page" />
-        <activity android:name=".Sample_Main"></activity>
+        <activity android:name=".Sample_Main" />
+        <activity android:name=".Sample_Record_Main"></activity>
     </application>
 
 </manifest>

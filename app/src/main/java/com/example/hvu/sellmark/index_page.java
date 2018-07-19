@@ -5,11 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 public class index_page extends AppCompatActivity {
 
-  Button btnproject, btnvendor, btnsample;
+    Button btnproject, btnvendor, btnsample;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,5 +35,6 @@ public class index_page extends AppCompatActivity {
         btnproject = (Button) findViewById(R.id.btnproject);
         btnsample = (Button) findViewById(R.id.btnsample);
         btnvendor = (Button) findViewById(R.id.btnvendor);
+
     }
 }
